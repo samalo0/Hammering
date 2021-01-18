@@ -2,6 +2,7 @@
 
 #include "Camera/CameraComponent.h"
 #include "HammeringStatics.h"
+#include "HeadMountedDisplayFunctionLibrary.h"
 #include "MotionControllerComponent.h"
 #include "PickupInterface.h"
 #include "Components/SphereComponent.h"
@@ -63,6 +64,8 @@ void AHammeringPawn::BeginPlay()
 {
 	Super::BeginPlay();
 
+	UHeadMountedDisplayFunctionLibrary::SetTrackingOrigin(EHMDTrackingOrigin::Floor);
+	
 	if(bShowDebug)
 	{
 		LeftGrabSphere->SetHiddenInGame(false);
